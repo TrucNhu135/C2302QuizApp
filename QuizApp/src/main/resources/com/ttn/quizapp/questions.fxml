@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttn.quizapp.QuestionsController">
    <styleClass>
       <String fx:value="Main" />
       <String fx:value="Main" />
@@ -25,7 +25,7 @@
       <TextArea prefHeight="80.0" prefWidth="600.0" />
       <HBox prefHeight="34.0" prefWidth="600.0" styleClass="Main">
          <children>
-            <ComboBox prefWidth="150.0" promptText="Danh mục" />
+            <ComboBox fx:id="cbcates" prefWidth="150.0" promptText="Danh mục" />
             <ComboBox layoutX="10.0" layoutY="10.0" prefWidth="150.0" promptText="Mức độ" />
          </children>
       </HBox>
