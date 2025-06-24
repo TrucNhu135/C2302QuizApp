@@ -24,7 +24,7 @@ private final Connection conn;
         }
     }
     public jdbcConnector() throws SQLException {
-        this.conn= DriverManager.getConnection("jdbc:mysql://localhost/quizdb","root","trucnhu2025@");
+        this.conn= DriverManager.getConnection("jdbc:mysql://localhost/quizdb","root","root");
     }
     
     public static jdbcConnector getInstance() throws SQLException{

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttn.quizapp.QuestionsController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttn.quizapp.QuestionsController">
    <styleClass>
       <String fx:value="Main" />
       <String fx:value="Main" />
@@ -26,10 +26,10 @@
       <HBox prefHeight="34.0" prefWidth="600.0" styleClass="Main">
          <children>
             <ComboBox fx:id="cbcates" prefWidth="150.0" promptText="Danh mục" />
-            <ComboBox layoutX="10.0" layoutY="10.0" prefWidth="150.0" promptText="Mức độ" />
+            <ComboBox fx:id="cbLevels" layoutX="10.0" layoutY="10.0" prefWidth="150.0" promptText="Mức độ" />
          </children>
       </HBox>
-      <VBox prefHeight="98.0" prefWidth="600.0">
+      <VBox fx:id="vbChoice" prefHeight="98.0" prefWidth="600.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="600.0" styleClass="Main">
                <children>
@@ -45,6 +45,6 @@
             </HBox>
          </children>
       </VBox>
-      <Button mnemonicParsing="false" styleClass="Button" text="Thêm lựa chọn" />
+      <Button mnemonicParsing="false" onAction="#handleMoreChoice" styleClass="Button" text="Thêm lựa chọn" />
    </children>
 </VBox>

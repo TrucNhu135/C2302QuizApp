@@ -5,7 +5,10 @@
 package com.ttn.quizapp;
 
 import com.ttn.pojo.Category;
+import com.ttn.pojo.Level;
 import com.ttn.services.CategoryServices;
+import com.ttn.services.LevelServices;
+//import java.lang.System.Logger.Level;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,9 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -26,8 +34,11 @@ import javafx.scene.control.ComboBox;
  * @author admin
  */
 public class QuestionsController implements Initializable {
+    @FXML private VBox vbChoice;
         @FXML private ComboBox<Category> cbcates;
+        @FXML private ComboBox<Level> cbLevels;
         private static final CategoryServices cateService= new CategoryServices();
+        private static final LevelServices levelService=new LevelServices();
     /**
    
      * Initializes the controller class.
@@ -57,8 +68,21 @@ public class QuestionsController implements Initializable {
 //            conn.close();
 
             this.cbcates.setItems(FXCollections.observableList(cateService.getCates()));
+               this.cbLevels.setItems(FXCollections.observableList(levelService.getLevels()));
         } catch (SQLException ex) {
             System.getLogger(QuestionsController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
+    }
+    public void handleMoreChoice(ActionEvent event)
+    {
+        HBox h=new HBox();
+        h.getStyleClass().add("Main");
+       
+        RadioButton r=new RadioButton();
+        TextField txt=new TextField();
+        txt.getStyleClass().add("Input");
+        
+        h.getChildren().addAll(r,txt);
+        this.vbChoice.getChildren().add(h);
     }
 }
